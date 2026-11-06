@@ -31,13 +31,13 @@ export interface SiteConfig {
 /** The site-level config. Per-repo spawns override the identity fields only. */
 export const siteConfig: SiteConfig = {
   baseDomain: process.env.NEXT_PUBLIC_BASE_DOMAIN ?? 'otro.bd',
-  subdomain: (process.env.NEXT_PUBLIC_SITE_SUBDOMAIN as Subdomain) ?? 'main',
-  brandName: 'OTRO',
-  tagline: 'Business Beyond Borders',
+  subdomain: (process.env.NEXT_PUBLIC_SITE_SUBDOMAIN as Subdomain) ?? 'shop',
+  brandName: 'Shop OTRO',
+  tagline: 'Delivered Across Bangladesh',
   description:
-    'OTRO — a division of OTRO INNOVATIONS LLC. Bridging China, Bangladesh and the world across trade, education, digital marketing and travel.',
+    'Shop OTRO — Bangladesh-local e-commerce with cash on delivery, bKash, Nagad and SSLCommerz payments, and Pathao/RedX logistics.',
   legalEntityName: 'OTRO INNOVATIONS LLC',
-  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'hello@otro.bd',
+  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'support@otro.bd',
   phone: '+880-XXXXXXXXX', // USER: replace with verified business number
   socialHandles: {
     facebook: 'otroinnovations',

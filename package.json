@@ -1,8 +1,8 @@
 {
-  "name": "otro-starter",
+  "name": "otro-shop",
   "version": "1.0.0",
   "private": true,
-  "description": "OTRO starter template — Next.js App Router + Tailwind + domain-portable siteConfig. Clone per site.",
+  "description": "OTRO starter template \u2014 Next.js App Router + Tailwind + domain-portable siteConfig. Clone per site.",
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/assert-no-hardcoded-domain.mjs && next build",
