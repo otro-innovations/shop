@@ -23,9 +23,18 @@ export function buildMetadata({
   const pageTitle = title ? `${title} | ${siteConfig.brandName}` : `${siteConfig.brandName} — ${siteConfig.tagline}`;
   const desc = description ?? siteConfig.description;
   const url = absoluteUrl(path);
+  // Root layout owns the "%s | Brand" template. Child pages pass a plain string
+  // title so the template is applied exactly once (no doubled brand suffix).
+  // The root segment (path '') is not wrapped by its own layout template, so it
+  // gets the brand suffix applied here.
+  const titleField = !title
+    ? { default: pageTitle, template: `%s | ${siteConfig.brandName}` }
+    : path === '' || path === '/'
+      ? `${title} | ${siteConfig.brandName}`
+      : title;
   return {
     metadataBase: new URL(absoluteUrl('')),
-    title: { default: pageTitle, template: `%s | ${siteConfig.brandName}` },
+    title: titleField,
     description: desc,
     keywords: ['OTRO', 'OTRO INNOVATIONS', 'China', 'Bangladesh', 'sourcing', 'education', 'trade'],
     alternates: { canonical: url },
